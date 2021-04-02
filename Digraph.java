@@ -44,6 +44,17 @@ public class Digraph {
         return numberOfEdges;
     }
 
+    public int getNumberOfVertices() {
+        return numberOfVertices;
+    }
+
+    public int getNumberOfEdges() {
+        return numberOfEdges;
+    }
+
+    public void setNumberOfEdges(int numberOfEdges) {
+        this.numberOfEdges = numberOfEdges;
+    }
 
     private void validateVertex(int v) {
         if (v < 0 || v >= numberOfVertices)
@@ -90,7 +101,10 @@ public class Digraph {
 
     public static void main(String[] args) {
         Digraph G = new Digraph(new Scanner(System.in));
-        System.out.println(G);
+
+        for (int w : G.adj(0)) {
+            System.out.println(w);
+        }
     }
 
 }
